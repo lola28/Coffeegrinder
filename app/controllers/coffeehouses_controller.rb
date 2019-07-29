@@ -1,4 +1,4 @@
-class CoffeehouseController < ApplicationController
+class CoffeehousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   layout "showpage", only: [:show]
 

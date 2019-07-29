@@ -1,0 +1,50 @@
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), asset-url('Coffeebeans.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.banner h1 {
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner h3 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: lighter;
+}
+
+
+.banner-container {
+  padding-top: 25vh;
+  padding-bottom: 8vh;
+}
+
+.banner-item{
+  color: white;
+  text-decoration: none;
+  font: $body-font;
+  float: right;
+  padding-right: 4vh;
+  padding-top: 1.5vh;
+  justify-content: space-between;
+}
+
+.banner-item:hover{
+  color:$babyblue;
+}
+
+.banner-item .avatar{
+  margin-top: 8px
+}
+
+
+// Confirmation banner
+.welcome-container {
+  border: 2px solid white;
+  box-shadow: 0 0 2px;
+  padding: 5px 5px;
+  background-color: black;
+}

@@ -1,19 +1,16 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= render 'shared/head' %>
   </head>
+
   <body>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
-
+    <%= render 'shared/banner' %>
+    <div class="container mt-4 page-wrapper">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
-
     <p class="alert"><%= alert %></p>
-
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
   </body>
 </html>

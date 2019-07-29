@@ -1,4 +1,4 @@
-class CheckInController < ApplicationController
+class CheckInsController < ApplicationController
   def create
     @coffeehouse = Coffeehouse.find(params[:coffeehouse_id])
     @checkin = CheckIn.new
