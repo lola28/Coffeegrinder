@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get 'coffeehouses/search'
 
   resources :coffeehouses do
-    get 'search', to: 'coffeehouses#search', as: 'search'
+     get 'search', to: 'coffeehouses#search', as: 'search'
 
     resources :check_ins, only: [:create, :edit, :update, :destroy]
-  end
+   end
 end

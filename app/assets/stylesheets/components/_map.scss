@@ -1,0 +1,29 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#map {
+  width: 70vh;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  position: sticky;
+  top: 0;
+}
+
+@media (min-width: 576px) {
+  #map {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  #map {
+    display: block;
+  }
+}

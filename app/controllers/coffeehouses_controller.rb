@@ -1,35 +1,35 @@
 class CoffeehousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  layout "showpage", only: [:show]
+  #layout "showpage", only: [:show]
 
   def index
     @coffeehouses = policy_scope(Coffeehouse).where.not(latitude: nil, longitude: nil)
-
+    @coffeehouses = Coffeehouse.geocoded
     # @user_interests = []
     # @activities.each do |activity|
     #   interests = policy_scope(Interest).where({ activity: activity, user: current_user })
     #   @user_interests << interests.first if !interests.first.nil?
 
-    # @markers = @activities.map do |activity|
-    #   {
-    #     lat: activity.latitude,
-    #     lng: activity.longitude,
-    #     infoWindow: render_to_string(partial: "infowindow", locals: { activity: activity }),
-    #     image_url: helpers.asset_url('running-circle.png')
-    #   }
-    # end
+     @markers = @coffeehouses.map do |coffeehouse|
+      {
+         lat: coffeehouse.latitude,
+         lng: coffeehouse.longitude,
+         infoWindow: render_to_string(partial: "infowindow", locals: { coffeehouse: coffeehouse }),
+         image_url: helpers.asset_url('running-circle.png')
+       }
+     end
 
-    # if params[:activity_query].present?
-    #   @activities = @activities.search_by_name(params[:activity_query])
-    #   @markers = @activities.map do |activity|
-    #   {
-    #     lat: activity.latitude,
-    #     lng: activity.longitude,
-    #     infoWindow: render_to_string(partial: "infowindow", locals: { activity: activity }),
-    #     image_url: helpers.asset_url('running-circle.png')
-    #   }
-    #   end
-    # end
+     if params[:location_query].present?
+       @activities = @activities.search_by_name(params[:activity_query])
+       @markers = @activities.map do |activity|
+       {
+          lat: activity.latitude,
+         lng: activity.longitude,
+         infoWindow: render_to_string(partial: "infowindow", locals: { coffeehouse: coffeehouse }),
+         image_url: helpers.asset_url('running-circle.png')
+       }
+       end
+     end
 
     # if params[:location_query].present?
     #   @activities = @activities.search_by_location(params[:location_query])

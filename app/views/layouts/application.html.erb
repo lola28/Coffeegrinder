@@ -7,7 +7,12 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless in_authentication_page? %>
+
+    <div class="scroll-container <%= in_authentication_page? ? 'full-height' : '' %>">
+      <div class="<%= in_authentication_page? ? 'devise-background' : 'container mt-4 page-wrapper' %>">
+        <%= yield %>
+      </div>
 
     <%= render 'shared/footer' %>
 
