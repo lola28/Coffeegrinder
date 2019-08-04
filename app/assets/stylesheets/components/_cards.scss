@@ -1,0 +1,238 @@
+// INDEX
+
+.index-container {
+  display: flex;
+  z-index:-1;
+}
+
+.card-index {
+  overflow: hidden;
+  height: 100px;
+  width: 700px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  .card-index-tags {
+    margin-left: auto;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.card-index-text h3:hover {
+  color: $orange;
+}
+
+.card-index-title a {
+  text-decoration: none;
+  color: $gray;
+}
+
+.card-index-title a:hover {
+  text-decoration: none;
+  color: $orange;
+}
+
+.card-index-infos {
+  padding: 8px;
+  align-items: left;
+  width: 500px;
+
+  h3 {
+    font-size: 18px;
+    color: $gray;
+    margin-block-end: 5px;
+  }
+
+   p {
+    font-size: 12px;
+    margin-block-end: 5px;
+  }
+}
+
+.card-index-benef {
+  color: $orange;
+}
+
+.card-index-benef:hover {
+  color: $orange;
+}
+
+.card-index-tags {
+  margin-right: 10px;
+  p {
+    margin-bottom: 0;
+    }
+}
+
+.avatar-name a {
+  color: $gray;
+}
+
+.cards-index a {
+  text-decoration: none;
+}
+
+.card-index-img {
+  height: 100%;
+  width: 190px;
+  object-fit: cover;
+}
+
+.interest-index {
+  text-align: right;
+}
+
+.card-btn-index {
+  position: sticky;
+  bottom: 0;
+  top: 50px;
+}
+
+.registered {
+  font-size:10px !important;
+  font-style: italic;
+  color: $green;
+}
+
+.empty-search-img {
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.empty-search-img img {
+  height: 400px;
+  width: 500px;
+  border-radius: 5%;
+}
+
+.empty-search-img h3{
+  margin-top: 50px;
+  font-style: italic;
+}
+
+// DASHBOARD
+
+.card-dashboard {
+  display: flex;
+  width: 100vh;
+  height: 15vh;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  margin-top: 2px;
+  margin-right: 10px;
+}
+
+.card-dashboard-img {
+  width: 190px;
+  object-fit: cover;
+}
+
+.card-dashboard-infos {
+  padding: 2px;
+  margin-left: 10px;
+  width: 500px;
+
+  h3 {
+    font-size: 18px;
+    color: $gray;
+    margin-block-end: 5px;
+  }
+
+   p {
+    font-size: 12px;
+    margin-block-end: 5px;
+  }
+}
+
+.card-dashboard-title {
+  margin-top: 10px !important;
+}
+
+.card-dashboard-title a {
+  text-decoration: none;
+  color: $gray;
+}
+
+.card-dashboard-title a:hover {
+  text-decoration: none;
+  color: $orange;
+}
+
+.card-dashboard-benef {
+  color: $orange;
+  font-size: 16px;
+}
+
+.card-btns {
+  display: flex;
+  margin-left: auto;
+  margin-right: 30px;
+  flex-direction: column;
+  align-self: center;
+}
+
+// LANDING
+
+#landing a {
+  text-decoration: none;
+}
+
+.category-logo {
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  opacity: 0.6;
+}
+
+
+.card-landing {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.zoom:hover {
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transition: transform .5s ease;
+}
+
+.card-landing-infos {
+  padding: 16px;
+  font-size: 16px;
+  color: $gray;
+  text-decoration: none;
+}
+
+.card-landing-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+// Confirmation emails
+
+.confirmation {
+  width: 50px;
+}
+
+// Capacity classes
+
+.full-capacity {
+  opacity: 0.5;
+}

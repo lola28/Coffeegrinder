@@ -1,7 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="map-container" style="position: sticky; top: 50px;">
+<div class="index-container">
+
+  <div class="cards-index">
+    <% @coffeehouses.each do |coffeehouse| %>
+        <div class="card-index-infos d-flex justify-content-between">
+          <div class="card-index-text">
+            <%= link_to coffeehouse do %>
+              <h3><strong><%= coffeehouse.name %></strong></h3>
+            <% end %>
+                <p><a href="#" class="card-index-benef" data-toggle="modal" data-target=".bd-example-modal-lg"></a></p>
+            </div>
+        </div>
+      <% end %>
+  </div>
+    <div class="map-container" style="position: sticky; top: 50px;">
       <div
         id="map"
         data-markers="<%= @markers.to_json %>"
@@ -9,3 +23,6 @@
         class="map"
       >
       </div>
+    </div>
+</div>
+
