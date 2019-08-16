@@ -1,6 +1,6 @@
 class CoffeehousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  #layout "showpage", only: [:show]
+  layout "showpage", only: [:show]
 
   def index
     @coffeehouses = policy_scope(Coffeehouse).where.not(latitude: nil, longitude: nil)
@@ -23,7 +23,7 @@ class CoffeehousesController < ApplicationController
        @activities = @activities.search_by_name(params[:activity_query])
        @markers = @activities.map do |activity|
        {
-          lat: activity.latitude,
+         lat: activity.latitude,
          lng: activity.longitude,
          infoWindow: render_to_string(partial: "infowindow", locals: { coffeehouse: coffeehouse }),
          image_url: helpers.asset_url('running-circle.png')
