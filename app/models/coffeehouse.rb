@@ -11,11 +11,6 @@ class Coffeehouse < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   include PgSearch
-  pg_search_scope :search_by_name,
-    against: [ :name ],
-    using: {
-      tsearch: { prefix: true }
-    }
 
   pg_search_scope :search_by_location,
     against: [ :location ],

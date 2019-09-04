@@ -20,8 +20,8 @@ class CoffeehousesController < ApplicationController
        }
      end
 
-     if params[:coffeehouse_query].present?
-       @acoffeehouses = @acoffeehouses.search_by_name(params[:coffeehouse_query])
+     if params[:location_query].present?
+       @acoffeehouses = @acoffeehouses.search_by_location(params[:location_query])
        @markers = @coffeehouses.map do |coffeehouse|
        {
          lat: coffeehouse.latitude,
