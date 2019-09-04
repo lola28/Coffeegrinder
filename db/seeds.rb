@@ -22,7 +22,7 @@ kaka = User.create!(
   )
 puts 'Creating Coffeehouses...'
 
-coffeegang = Coffeehouse.create(
+coffeegang = Coffeehouse.new(
 name: "Coffeegang",
 location: "Zülpicher Platz, 50674 Köln",
 openingtime: "Monday's: closed; Tuesday- Saturday 10am - 7pm",
@@ -30,8 +30,9 @@ latitude: 50.930406,
 longitude: 6.940791,
 description: "The urban Coffeebar! Serving freshly brewed, fair traded Coffee, home made delicious Cakes and Snacks and a friendly atmosphere."
   )
+coffeegang.save!
 
-heilandt = Coffeehouse.create(
+heilandt = Coffeehouse.new(
 name: "Heilandt",
 location: "Sülzburgstraße 1, 50937 Köln ",
 openingtime: "Mo-Fr: 8am - 7pm, Saturday 9am - 7pm, Sunday 10am - 7pm",
@@ -39,8 +40,9 @@ latitude: 50.920284,
 longitude: 6.927821,
 description: "Good Coffee is not by chance it is an art."
   )
+heilandt.save!
 
-misspäpki = Coffeehouse.create(
+misspäpki = Coffeehouse.new(
 name: "Miss Päpki",
 location: "Brüsseler Pl. 18, 50674 Köln ",
 openingtime: "Mo, Wed-Fr: 9:30am - 7:30pm, Sa & So 10:30am - 7:30pm, Tuesday's: closed",
@@ -48,8 +50,9 @@ latitude: 50.939619,
 longitude: 6.933556,
 description: "Die kreativsten Kuchen mit viel liebe gebacken."
   )
+misspäpki.save!
 
-hinzundkunz = Coffeehouse.create(
+hinzundkunz = Coffeehouse.new(
 name: "Hinz & Kunz",
 location: "Schallstraße 34, 50931 Köln",
 openingtime: "Mo, Wed-Fr: 9:30am - 7:30pm, Sa & So 10:30am - 7:30pm, Tuesday's: closed",
@@ -57,4 +60,6 @@ latitude: 50.937273,
 longitude: 6.920994,
 description: "Best pancakes in town served with exquisit coffee and a cosy atmosphere."
   )
+hinzundkunz.save!
+
 puts 'Finished!'

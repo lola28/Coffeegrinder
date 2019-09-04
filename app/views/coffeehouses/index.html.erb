@@ -2,17 +2,18 @@
 
 
 <div class="index-container">
-
   <div class="cards-index">
     <% @coffeehouses.each do |coffeehouse| %>
+      <div class="cards-index d-flex justify-content-between">
         <div class="card-index-infos d-flex justify-content-between">
           <div class="card-index-text">
             <%= link_to coffeehouse do %>
               <h3><strong><%= coffeehouse.name %></strong></h3>
             <% end %>
-                <p><a href="#" class="card-index-benef" data-toggle="modal" data-target=".bd-example-modal-lg"></a></p>
-            </div>
+            <p><%= coffeehouse.description %></p>
+          </div>
         </div>
+      </div>
       <% end %>
   </div>
     <div class="map-container" style="position: sticky; top: 50px;">
@@ -28,19 +29,3 @@
 
 
 
-<div class="card mb-3">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-</div>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-  <img src="..." class="card-img-top" alt="...">
-</div>

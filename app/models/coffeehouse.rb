@@ -1,6 +1,5 @@
 class Coffeehouse < ApplicationRecord
-  belongs_to :category
-  belongs_to :user, class_name: "User", foreign_key: "user_id"
+
   has_many :checkins, dependent: :destroy
 
   validates :name, presence: true
@@ -10,4 +9,17 @@ class Coffeehouse < ApplicationRecord
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch
+  pg_search_scope :search_by_name,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
+  pg_search_scope :search_by_location,
+    against: [ :location ],
+    using: {
+      tsearch: { prefix: true }
+  }
 end

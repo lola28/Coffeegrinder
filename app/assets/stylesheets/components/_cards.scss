@@ -5,8 +5,8 @@
   z-index:-1;
 }
 
-.card-index {
-  overflow: hidden;
+.cards-index {
+  //overflow: hidden;
   height: 100px;
   width: 700px;
   background: white;
@@ -30,7 +30,7 @@
 }
 
 .card-index-text h3:hover {
-  color: $orange;
+  color: $babyblue;
 }
 
 .card-index-title a {
@@ -40,7 +40,7 @@
 
 .card-index-title a:hover {
   text-decoration: none;
-  color: $orange;
+  color: $babyblue;
 }
 
 .card-index-infos {

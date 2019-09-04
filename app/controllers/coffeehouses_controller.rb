@@ -5,6 +5,7 @@ class CoffeehousesController < ApplicationController
   def index
     @coffeehouses = policy_scope(Coffeehouse).where.not(latitude: nil, longitude: nil)
     @coffeehouses = Coffeehouse.geocoded
+    #@coffeehouses = Coffeehouse.all
     # @user_interests = []
     # @activities.each do |activity|
     #   interests = policy_scope(Interest).where({ activity: activity, user: current_user })
@@ -15,18 +16,18 @@ class CoffeehousesController < ApplicationController
          lat: coffeehouse.latitude,
          lng: coffeehouse.longitude,
          infoWindow: render_to_string(partial: "infowindow", locals: { coffeehouse: coffeehouse }),
-         image_url: helpers.asset_url('running-circle.png')
+         image_url: helpers.asset_url('coffee_icon.png')
        }
      end
 
-     if params[:location_query].present?
-       @activities = @activities.search_by_name(params[:activity_query])
-       @markers = @activities.map do |activity|
+     if params[:coffeehouse_query].present?
+       @acoffeehouses = @acoffeehouses.search_by_name(params[:coffeehouse_query])
+       @markers = @coffeehouses.map do |coffeehouse|
        {
-         lat: activity.latitude,
-         lng: activity.longitude,
+         lat: coffeehouse.latitude,
+         lng: coffeehouse.longitude,
          infoWindow: render_to_string(partial: "infowindow", locals: { coffeehouse: coffeehouse }),
-         image_url: helpers.asset_url('running-circle.png')
+         image_url: helpers.asset_url('coffee_icon.png')
        }
        end
      end
