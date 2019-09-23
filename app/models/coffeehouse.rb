@@ -15,6 +15,6 @@ class Coffeehouse < ApplicationRecord
   pg_search_scope :search_by_location,
     against: [ :location ],
     using: {
-      tsearch: { prefix: true }
+      #tsearch: { prefix: true }
   }
 end

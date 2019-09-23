@@ -27,7 +27,7 @@
         <div class="banner-search-bar">
           <%= form_tag coffeehouses_path, method: :get, style:"width:100%" do %>
           <%= text_field_tag :location_query,
-            params[:location_query], class: "form-control",
+            params[:location_query],
             placeholder: "Type in your address...", class: "banner-search" %>
             <%= submit_tag 'Search!', class: "btn btn-search btn-search-banner" %>
           <% end %>

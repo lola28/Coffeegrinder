@@ -15,7 +15,15 @@
         </div>
       </div>
       <% end %>
+      <% if @coffeehouses.empty? %>
+      <div class="empty-search-img">
+        <%= image_tag ("coffee_icon.png")%>
+        <h3>Sorry, there is nothing matching your search...</h3>
+      </div>
+    <% end %>
   </div>
+
+  <% if !@coffeehouses.empty? %>
     <div class="map-container" style="position: sticky; top: 50px;">
       <div
         id="map"
@@ -24,6 +32,8 @@
         class="map"
       >
       </div>
+    </div>
+  <% end %>
     </div>
 </div>
 

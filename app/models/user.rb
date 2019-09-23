@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
 
   has_many :checkins
-  has_many :activities
+  has_many :acoffeehouses
 
   validates :username, uniqueness: true, presence: true
   validates :email, presence: true
